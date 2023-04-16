@@ -1,0 +1,566 @@
+15:19:21 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:71:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   71 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'testLED1':
+../Core/Src/main.c:76:2: error: too few arguments to function 'HAL_UART_Transmit'
+   76 |  HAL_UART_Transmit(&huart1,(uint8_t*)data,20);
+      |  ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:338,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:725:19: note: declared here
+  725 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                   ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  122 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:134:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  134 |   SCH_Add_Task(testLED1, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:145:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  145 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+15:21:08 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:71:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   71 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  122 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:134:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  134 |   SCH_Add_Task(testLED1, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:145:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  145 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  12904	     20	   2596	  15520	   3ca0	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+15:22:06 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:71:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   71 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  122 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:134:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  134 |   SCH_Add_Task(testLED1, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:145:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  145 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  12904	     20	   2596	  15520	   3ca0	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+15:23:05 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:71:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   71 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  122 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:134:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  134 |   SCH_Add_Task(testLED1, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:145:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  145 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  12904	     20	   2596	  15520	   3ca0	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+15:30:59 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:71:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   71 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  122 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:134:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  134 |   SCH_Add_Task(sendData, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:145:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  145 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  12904	     20	   2596	  15520	   3ca0	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+15:32:49 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-size   test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12904	     20	   2596	  15520	   3ca0	test.elf
+Finished building: default.size.stdout
+ 
+15:33:03 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-size   test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12904	     20	   2596	  15520	   3ca0	test.elf
+Finished building: default.size.stdout
+ 
+12:56:48 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:63:43: warning: passing argument 2 of 'HAL_UART_Receive_DMA' makes pointer from integer without a cast [-Wint-conversion]
+   63 |     HAL_UART_Receive_DMA(&huart1, rxBuffer[0], 1);
+      |                                   ~~~~~~~~^~~
+      |                                           |
+      |                                           uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:338,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:730:76: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  730 | HAL_StatusTypeDef HAL_UART_Receive_DMA(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:72:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   72 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:41: warning: passing argument 2 of 'HAL_UART_Receive_DMA' makes pointer from integer without a cast [-Wint-conversion]
+  121 |   HAL_UART_Receive_DMA(&huart1, rxBuffer[0] , 1);
+      |                                 ~~~~~~~~^~~
+      |                                         |
+      |                                         uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:338,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:730:76: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  730 | HAL_StatusTypeDef HAL_UART_Receive_DMA(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~^~~~~
+../Core/Src/main.c:123:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  123 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:135:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  135 |   SCH_Add_Task(sendData, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:146:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  146 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  12912	     20	   2596	  15528	   3ca8	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+12:58:28 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:63:43: warning: passing argument 2 of 'HAL_UART_Receive_DMA' makes pointer from integer without a cast [-Wint-conversion]
+   63 |     HAL_UART_Receive_DMA(&huart1, rxBuffer[0], RX_SIZE);
+      |                                   ~~~~~~~~^~~
+      |                                           |
+      |                                           uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:338,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:730:76: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  730 | HAL_StatusTypeDef HAL_UART_Receive_DMA(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:72:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   72 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:41: warning: passing argument 2 of 'HAL_UART_Receive_DMA' makes pointer from integer without a cast [-Wint-conversion]
+  121 |   HAL_UART_Receive_DMA(&huart1, rxBuffer[0] , RX_SIZE);
+      |                                 ~~~~~~~~^~~
+      |                                         |
+      |                                         uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:338,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:730:76: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  730 | HAL_StatusTypeDef HAL_UART_Receive_DMA(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~^~~~~
+../Core/Src/main.c:123:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  123 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:135:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  135 |   SCH_Add_Task(sendData, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:146:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  146 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  12912	     20	   2588	  15520	   3ca0	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+12:59:58 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:72:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   72 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  123 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:135:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  135 |   SCH_Add_Task(sendData, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:146:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  146 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  12904	     20	   2596	  15520	   3ca0	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+13:05:05 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:63:43: warning: passing argument 2 of 'HAL_UART_Receive_DMA' makes pointer from integer without a cast [-Wint-conversion]
+   63 |     HAL_UART_Receive_DMA(&huart1, rxBuffer[0], RX_SIZE);
+      |                                   ~~~~~~~~^~~
+      |                                           |
+      |                                           uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:338,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:730:76: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  730 | HAL_StatusTypeDef HAL_UART_Receive_DMA(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:72:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   72 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:41: warning: passing argument 2 of 'HAL_UART_Receive_DMA' makes pointer from integer without a cast [-Wint-conversion]
+  121 |   HAL_UART_Receive_DMA(&huart1, rxBuffer[0], RX_SIZE);
+      |                                 ~~~~~~~~^~~
+      |                                         |
+      |                                         uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:338,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:730:76: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  730 | HAL_StatusTypeDef HAL_UART_Receive_DMA(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~^~~~~
+../Core/Src/main.c:123:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  123 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:135:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  135 |   SCH_Add_Task(sendData, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:146:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  146 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  12912	     20	   2588	  15520	   3ca0	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+13:06:20 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:63:43: warning: passing argument 2 of 'HAL_UART_Receive_DMA' makes pointer from integer without a cast [-Wint-conversion]
+   63 |     HAL_UART_Receive_DMA(&huart1, rxBuffer[0], RX_SIZE);
+      |                                   ~~~~~~~~^~~
+      |                                           |
+      |                                           uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:338,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:730:76: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  730 | HAL_StatusTypeDef HAL_UART_Receive_DMA(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:72:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   72 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:41: warning: passing argument 2 of 'HAL_UART_Receive_DMA' makes pointer from integer without a cast [-Wint-conversion]
+  121 |   HAL_UART_Receive_DMA(&huart1, rxBuffer[0], RX_SIZE);
+      |                                 ~~~~~~~~^~~
+      |                                         |
+      |                                         uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:338,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:730:76: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  730 | HAL_StatusTypeDef HAL_UART_Receive_DMA(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                   ~~~~~~~~~^~~~~
+../Core/Src/main.c:123:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  123 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:135:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  135 |   SCH_Add_Task(sendData, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:146:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  146 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  12912	     20	   2588	  15520	   3ca0	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+13:07:06 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:72:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   72 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  123 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:135:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  135 |   SCH_Add_Task(sendData, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:146:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  146 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  12904	     20	   2588	  15512	   3c98	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+13:17:51 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:84:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   84 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:135:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  135 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:147:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  147 |   SCH_Add_Task(sendData, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:158:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  158 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  12992	     20	   2588	  15600	   3cf0	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+13:20:01 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:65:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   65 |     printf(rxBuffer[0])
+      |     ^~~~~~
+../Core/Src/main.c:65:5: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:65:20: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
+   65 |     printf(rxBuffer[0])
+      |            ~~~~~~~~^~~
+      |                    |
+      |                    uint8_t {aka unsigned char}
+../Core/Src/main.c:65:20: note: expected 'const char *' but argument is of type 'uint8_t' {aka 'unsigned char'}
+../Core/Src/main.c:65:24: error: expected ';' before 'if'
+   65 |     printf(rxBuffer[0])
+      |                        ^
+      |                        ;
+   66 |     if (rxBuffer[0] == '2'){
+      |     ~~                  
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:85:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   85 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:136:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  136 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:148:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  148 |   SCH_Add_Task(sendData, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:159:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  159 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:20:10 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:65:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   65 |     printf(rxBuffer[0]);
+      |     ^~~~~~
+../Core/Src/main.c:65:5: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:65:20: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
+   65 |     printf(rxBuffer[0]);
+      |            ~~~~~~~~^~~
+      |                    |
+      |                    uint8_t {aka unsigned char}
+../Core/Src/main.c:65:20: note: expected 'const char *' but argument is of type 'uint8_t' {aka 'unsigned char'}
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:85:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   85 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:136:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  136 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:148:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  148 |   SCH_Add_Task(sendData, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:159:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  159 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  17368	    120	   2608	  20096	   4e80	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+13:23:36 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:72:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   72 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:137:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  137 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:149:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  149 |   SCH_Add_Task(sendData, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:159:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  159 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  13028	     20	   2588	  15636	   3d14	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 

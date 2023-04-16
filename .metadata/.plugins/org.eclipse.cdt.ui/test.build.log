@@ -1,0 +1,31 @@
+13:23:36 **** Incremental Build of configuration Debug for project test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:72:2: warning: implicit declaration of function 'SCH_Update' [-Wimplicit-function-declaration]
+   72 |  SCH_Update();
+      |  ^~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:137:3: warning: implicit declaration of function 'SCH_Init' [-Wimplicit-function-declaration]
+  137 |   SCH_Init();
+      |   ^~~~~~~~
+../Core/Src/main.c:149:3: warning: implicit declaration of function 'SCH_Add_Task' [-Wimplicit-function-declaration]
+  149 |   SCH_Add_Task(sendData, 1000, 500); // ID 1
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:159:4: warning: implicit declaration of function 'SCH_Dispatch_Tasks' [-Wimplicit-function-declaration]
+  159 |    SCH_Dispatch_Tasks();
+      |    ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\ASUS\STM32CubeIDE\workspace_1.12.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size   test.elf 
+arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+  13028	     20	   2588	  15636	   3d14	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+
+13:23:37 Build Finished. 0 errors, 4 warnings. (took 989ms)
+
